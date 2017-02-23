@@ -12,12 +12,31 @@ gem "faker"
 gem "therubyracer"
 gem "less-rails-bootstrap"
 gem "minitest-rails"
+gem 'figaro'
+gem 'faraday'
 
 group :development do
   gem "spring"
+  gem 'web-console', '~> 2.0'
+  gem 'listen', '~> 3.0.5'
 end
 
 group :development, :test do
   gem "minitest-rails-capybara"
   gem "pry", :require => "pry"
+  gem 'byebug'
+  gem 'rspec-rails'
+  gem 'capybara'
+  gem 'launchy'
+  gem 'shoulda-matchers'
+  gem 'database_cleaner'
+  gem 'factory_girl_rails'
+  gem 'simplecov', require: false
 end
+
+group :test do
+  gem 'vcr'
+  gem 'webmock'
+end
+
+gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
