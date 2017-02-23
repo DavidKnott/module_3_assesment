@@ -7,4 +7,10 @@ class Api::V1::ItemsController < ApplicationController
   def show
     render :json => Item.find(params[:id]), :except => [:created_at, :updated_at]
   end
+
+  def destroy
+    item = Item.find(params[:id])
+    item.destroy
+    head :no_content
+  end
 end
