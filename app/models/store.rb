@@ -16,7 +16,7 @@ class Store
   def self.search_by(zip, distance)
     response = BestBuyService.search_by(zip, distance)
     stores = response[:stores].map do |store|
-      Store.new(store)
+      new(store)
     end
     [response[:total], stores]
   end
