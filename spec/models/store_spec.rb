@@ -3,7 +3,7 @@ require 'rails_helper'
 describe Store, type: :model do
   it "can_search_for_stores_by_zip" do
     VCR.use_cassette(".search_by_zip") do
-      stores = Store.search_by(80202)
+      stores = Store.search_by(80202, 25)
 
       expect(stores.first).to eq 16
       expect(stores.last.count).to eq 10

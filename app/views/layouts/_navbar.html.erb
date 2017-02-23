@@ -12,7 +12,8 @@
     <ul class="nav navbar-nav">
       <li>
         <%= form_tag search_path do %>
-          <%= text_field_tag :q, params[:q], placeholder: "Enter zip here.." %>
+          <%= text_field_tag :zip, params[:zip], placeholder: "Enter zip here.." %>
+          <%= text_field_tag :distance, params[:distance], placeholder: "Enter distance here..." %>
           <%= submit_tag "search"%>
         <% end %>
       </li>

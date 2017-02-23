@@ -5,7 +5,8 @@ describe "When a user user visits the root path" do
     VCR.use_cassette(".search_by_zip") do
       visit root_path
 
-      fill_in :q, :with => "80202"
+      fill_in :zip, :with => "80202"
+      fill_in :distance, :with => 25
 
       click_on "search"
 

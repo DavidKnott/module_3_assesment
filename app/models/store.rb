@@ -13,8 +13,8 @@ class Store
     @type          = attrs[:storeType]
   end
 
-  def self.search_by(zip)
-    response = BestBuyService.search_by(zip)
+  def self.search_by(zip, distance)
+    response = BestBuyService.search_by(zip, distance)
     stores = response[:stores].map do |store|
       Store.new(store)
     end
