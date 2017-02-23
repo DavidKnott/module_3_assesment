@@ -3,7 +3,7 @@ class StoresController < ApplicationController
     raw_response = Faraday.get "https://api.bestbuy.com/v1/stores(area(80202,25))?format=json&apiKey=ru99w3xp6qu5848qvbgrznxq"
     response = JSON.parse(raw_response.body,:symbolize_names => true)
     @total = response[:total]
-    @tores = response[:stores].map do |store|
+    @stores = response[:stores].map do |store|
       Store.new(store)
     end
   end
