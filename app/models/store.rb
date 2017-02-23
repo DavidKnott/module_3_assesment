@@ -14,13 +14,11 @@ class Store
   end
 
   def self.search_by(zip)
-    raw_response = Faraday.get "https://api.bestbuy.com/v1/stores(area(80202,25))?format=json&apiKey=#{ENV['BEST_BUY_API_KEY']}"
-    response = JSON.parse(raw_response.body,:symbolize_names => true)
-    total = response[:total]
+    response = BestBuyService.search_by(zip)
     stores = response[:stores].map do |store|
       Store.new(store)
     end
-    [total, stores]
+    [response[:total], stores]
   end
 
 end
