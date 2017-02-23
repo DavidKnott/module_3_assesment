@@ -9,6 +9,7 @@ describe "When a user user visits the root path" do
 
       click_on "search"
 
+      expect(current_path).to eq "/search"
       expect(page).to have_content "16 Total Stores"
       expect(page).to have_selector('.store', count: 10)
       within(".store", match: :first) do

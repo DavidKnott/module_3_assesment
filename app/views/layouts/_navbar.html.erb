@@ -11,7 +11,7 @@
   <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
     <ul class="nav navbar-nav">
       <li>
-        <%= form_tag stores_path, method: 'get' do %>
+        <%= form_tag search_path do %>
           <%= text_field_tag :q, params[:q], placeholder: "Enter zip here.." %>
           <%= submit_tag "search"%>
         <% end %>
