@@ -1,7 +1,7 @@
 require 'rails_helper'
 
-describe "When a user sends a GET request to /api/v1/items" do
-  scenario "they receive a 200 JSON response containing all items" do
+describe "When a user sends a GET request to /api/v1/items/:id" do
+  scenario "they receive a 200 JSON response with the specified item" do
     items = create_list(:item, 20)
     item  = items.first
     get "/api/v1/items/#{item.id}"
