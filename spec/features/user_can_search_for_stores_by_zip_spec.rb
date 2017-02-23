@@ -10,7 +10,7 @@ describe "When a user user visits the root path" do
 
     expect(page).to have_content "16 Total Stores"
     expect(page).to have_selector('.store', count: 10)
-    within (".store", match: :first) do
+    within (".store") do
       expect(page).to have_content "Name: BEST BUY MOBILE - CHERRY CREEK SHOPPING CENTER"
       expect(page).to have_content "City: DENVER"
       expect(page).to have_content "Distance: 3.45"
